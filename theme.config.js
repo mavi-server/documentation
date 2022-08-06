@@ -1,8 +1,6 @@
-import Image from 'next/image'
-
 const MaviLogo = () => {
   return (
-    <Image
+    <img
       width="120px"
       src="https://raw.githubusercontent.com/m-emre-yalcin/mavi/main/public/mavi.svg"
     />
