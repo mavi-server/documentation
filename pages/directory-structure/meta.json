@@ -1,0 +1,9 @@
+{
+  "database": "Database",
+  "models": "Models",
+  "routes": "Routes",
+  "populate": "Populate",
+  "middlewares": "Middlewares",
+  "uploads": "Uploads",
+  "utils": "Utils"
+}
