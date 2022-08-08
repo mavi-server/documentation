@@ -16,6 +16,7 @@ Create a `populate` folder into your project root and add `status.js` or `status
 Example populate file:
 
 ```js
+// status.js
 module.exports = {
   select: 'status',
   from: 'statuses',
@@ -25,7 +26,7 @@ module.exports = {
 }
 ```
 
-When you use this `{ populate: [`status`] }` in one of your `customer` routes, you will get your deep level data according to your populate configurations.
+When you use this `{ populate: ["status"] }` in one of your `customer` routes, you will get your deep level data according to your populate configurations.
 
 The config above will get the id of `row.status` then will bind the results to it.
 
