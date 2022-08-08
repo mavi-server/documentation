@@ -1,0 +1,12 @@
+{
+  "find": "Find",
+  "findOne": "Find One",
+  "count": "Count",
+  "create": "Creat",
+  "update": "Update",
+  "delete": "Delete",
+  "upload": "Upload",
+  "login": "Login",
+  "logout": "Logout",
+  "register": "Register"
+}
