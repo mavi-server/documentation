@@ -3,6 +3,7 @@
   "models": "Models",
   "routes": "Routes",
   "populate": "Populate",
+  "controllers": "Controllers",
   "middlewares": "Middlewares",
   "uploads": "Uploads",
   "utils": "Utils"

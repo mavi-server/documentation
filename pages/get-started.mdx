@@ -1,22 +1,40 @@
 ---
-title: Mavi - Example config
+title: Mavi - Get started
 ---
 
-## Example
+# Installation
 
-An example server configuration file:
+Here, you will find information on setting and running a Mavi project.
+
+## Setup
+
+### Database
+
+To get started you need to have a database. Right now only `PostgreSQL` is supported. There is simple [PostgreSQL configuration guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04) you can refer to.
+
+### Configuration
+
+> After setup your database, you can start using Mavi.
+
+#### [Install the package](https://www.npmjs.com/package/mavi)
+
+`npm install -g mavi`
+
+#### mavi.config
+
+To start mavi server, you must to define your configurations. Create a `mavi.config.js` file in your project root like below:
 
 <details>
 <summary>
-<a name="server-configuration-example">index.js</a>
+<a name="server-configuration-example">mavi.config.js</a>
 </summary>
 
 ```js
-// index.js
+// mavi.config.js
 
-const Package = require('./package.json')
+const { version } = require('package.json')
 module.exports = {
-  poweredBy: 'mavi v'.concat(Package.version),
+  poweredBy: 'mavi v'.concat(version),
   host: 'localhost',
   port: 3001,
   cors: {
@@ -173,20 +191,19 @@ module.exports = {
       // .
     },
     define: {
-      // Models generates your database table and api responses
-      // Api responses can be customized by the route configs
+      // Models generates your relational database and used by controllers.
       models: {
-        // an important note here: all the `hash` properties are automatically
-        // assigned if you put your models in the `models` folder and export with their name in index file
+        // note: all the `hash` properties are automatically
+        // assigned if you put your models in the `models` folder and exported with their name in index file
         // example models/index.js:
         // module.exports = {
         //   users: require('./users'),
         //   posts: require('./posts'),
         // }
         // but if you use them here, you should assign `hash` properties manually
-        // hashes are unique strings for each column and model
+        // hashes are unique strings for each column and model.
         // after that, if you change table/column names, add new tables/columns, or change column properties
-        // mavi will update your database automatically on build (there is no --watch option for now).
+        // mavi will update your database automatically on build (unfortunately there is no --watch option for now).
         //
         // ***
         // ** be careful if you drop/rename your hash property, dependent entity
@@ -196,7 +213,7 @@ module.exports = {
           id: {
             type: 'increments',
             constraints: ['primary'],
-            hash: 'WzE2NDMyMTk4NjY1MDRddXNlcnMuaWQ',
+            hash: 'WzE2NDMyMTk4NjY1MDRddXNlcnMuaWQ', // assign unique hash property to detect your column changes
           },
           username: {
             type: 'string',
@@ -374,7 +391,7 @@ module.exports = {
         ],
       },
       // Populate configs are used in routes
-      // There are different types of populates but none of them are standard. Will explain when they are ready.
+      // There are different types of populate options but they may breaking-change in the future.
       populate: {
         user: {
           select: 'user',
@@ -462,9 +479,27 @@ module.exports = {
 
 </details>
 
-The file above will create the entire server. You need to connect your database before you can use the server.
+### Mavi CLI
 
-> You can also create a folder for each `routes`, `populate`, `controllers`, `middlewares`, `models`, `utils`, `database` config and use their each key as a new file name then put their value inside.
->
-> This file can be `.js` or `.json`. If you use js, you should export your configs. After starting the server, mavi will combine your configs automatically.
-> Please see the [suggested usage](https://github.com/mavi-server/mavi/tree/main/examples/example2) here.
+You can start your server by using mavi cli.
+
+```sh
+# Start your server and build the models:
+`mavi start -b`
+```
+
+#### Commands
+
+```sh
+`mavi build` # builds the database from your models and seeds
+
+`mavi build --no-seeds` # builds the db without without the seeds
+
+`mavi seed` # Seeds the database with your `models/{model_name}.seed.js` files
+
+`mavi drop` # Drops the database
+
+`mavi clear` # Truncates the database
+
+# You need to re-run `mavi build` to update the database when you change your models.
+```

@@ -4,4 +4,43 @@ title: Mavi - Populate
 
 ## Populate
 
-soon
+If you created your routes, now you can advance it with the populate options.
+
+Populate will define a sub query for parent's data.
+
+In previous chapters we create `customer.js` model file. It has `status` column that references to primary key of the `statuses` model.
+To bring costumer status with `[GET] - api/customers/` request, you must define a populate option for `status` column.
+
+Create a `populate` folder into your project root and add `status.js` or `status.json` (for this example).
+
+Example populate file:
+
+```js
+module.exports = {
+  select: 'status',
+  from: 'statuses',
+  controller: 'object',
+  columns: ['id', 'state', 'lastSeen', 'updated_at', 'created_at'], // default is all as `*`
+  // exclude: ['id'] // you can also exclude columns
+}
+```
+
+When you use this `{ populate: [`status`] }` in one of your `customer` routes, you will get your deep level data according to your populate configurations.
+
+The config above will get the id of `row.status` then will bind the results to it.
+
+There are many useful populate options. You can explore them below.
+
+### Populate Properties:
+
+1. **select**:
+1. **from**:
+1. **type**:
+1. **controller**:
+1. **on**:
+1. **columns**:
+1. **exclude**:
+1. **returning**:
+1. **populate**:
+1. **query**:
+1. **context**:
