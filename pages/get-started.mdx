@@ -12,17 +12,18 @@ Here, you will find information on setting and running a Mavi project.
 
 To get started you need to have a database. Right now only `PostgreSQL` is supported. There is simple [PostgreSQL configuration guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04) you can refer to.
 
-### Configuration
-
 > After setup your database, you can start using Mavi.
 
-#### [Install the package](https://www.npmjs.com/package/mavi)
+### Install the package [mavi](https://www.npmjs.com/package/mavi)
 
 `npm install -g mavi`
 
-#### mavi.config
+### Configuration
 
-To start mavi server, you must to define your configurations. Create a `mavi.config.js` file in your project root like below:
+To start mavi server, you must to define your configurations first.
+
+Create a `mavi.config.js` file in your project root like below.
+But the object will be over bloated as your project grows.
 
 <details>
 <summary>
@@ -478,6 +479,38 @@ module.exports = {
 ```
 
 </details>
+
+You can choose `directory structure` to create more maintainable configurations as well.
+
+You can use `.js` or `.json` files. Each `.js` file should export your configs.
+
+**Directories:**
+
+1. database
+   1. development.js
+   1. production.js
+1. models
+   1. users.js
+   1. posts.js
+   1. posts.seed.js
+   1. uploads.js
+1. routes
+   1. posts.js
+   1. uploads.js
+1. populate
+   1. user.js
+   1. community.js
+   1. thumbnail.js
+   1. icon.js
+   1. replyTo.js
+   1. responseTo.js
+   1. tags.js
+   1. responseCount.js
+   1. replyCount.js
+   1. bookmark.js
+1. middlewares
+   1. greetings.js
+1. utils
 
 ### Mavi CLI
 
