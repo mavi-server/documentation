@@ -2,11 +2,11 @@
 title: Mavi - Models
 ---
 
-## Models
+# Models
 
 Models are used to build relational database and used by `controllers`.
 
-### Create models config
+## Create models config
 
 First create a `models` folder into your project root and add new files as `[model_name].js` or `[model_name].json`.
 
@@ -55,7 +55,7 @@ When you use `mavi build`, it will create `[model_name]` table with all defined 
 
 When you make any changes in your model file, you should use `mavi build` again. It will detect the changes and update the database.
 
-### Model Properties
+## Model Properties
 
 1. **type**: Data type. available: `increments`, `integer`, `bigInteger`, `text`, `string`, `float`, `double`, `decimal`, `boolean`, `date`, `datetime`, `time`, `timestamp`, `binary`, `enum`, `json`, `jsonb`, `uuid`, `geometry`, `geography`, `point`
 1. **constraints**: `primary` , `nullable` , `notNullable` , `unique` , `index`

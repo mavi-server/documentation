@@ -2,13 +2,13 @@
 title: Mavi - Database
 ---
 
-## Database
+# Database
 
 Database settings for connecting to your database.
 
 You should configure your PostgreSQL database before using `mavi start` command.
 
-### Create database config
+## Create database config
 
 Create a `database` folder into your project root and add new file as `development.js`, `production.js`, `test.js`, etc.
 

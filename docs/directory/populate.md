@@ -2,11 +2,11 @@
 title: Mavi - Populate
 ---
 
-## Populate
+# Populate
 
 If you created your routes, now you can advance it with the populate options. It will define a sub query configurations for the parent's data.
 
-### Configurations
+## Configurations
 
 In models chapter we created `customers.js` and `statuses.js` model files. `Customers` model has `status` column that references to primary key (`id`) of the `Statuses` model.
 
@@ -14,7 +14,7 @@ In routes chapter we created `customers.js` route collection. Some of the paths 
 
 But without defining a `status` configurations value can't be populated.
 
-### Bring deep level data
+## Bring deep level data
 
 Create a `populate` folder into your project root and add `status.js` or `status.json`.
 
@@ -64,7 +64,7 @@ The config above will get the id of `customer.status` then will bind the results
 
 There are many useful populate options. You can explore them below.
 
-### Populate Properties:
+## Populate Properties:
 
 1. **select**: Select `alias column` or `real column`. For instance; if you were select `stat` instead of `status`, it will create a new property for the parent object, because it is not defined in the model. But you will have to feed the `stat` with a parameter to return and bind value(s).
 1. **from**: Which model the subquery will use?
@@ -84,7 +84,7 @@ There are many useful populate options. You can explore them below.
 
 1. **context**: It is the parent model's name and is assigned automatically. You needn't change it in most cases.
 
-#### Special values for dynamic sub-queries
+### Special values for dynamic sub-queries
 
 1. `#context` value can be used with `where` query. It refers to the `context` property
 

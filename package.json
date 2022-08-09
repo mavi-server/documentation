@@ -1,25 +1,21 @@
 {
   "name": "documentation",
-  "version": "0.1.0",
-  "private": true,
-  "repository": {
-    "url": "https://github.com/mavi-server/mavi"
-  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint --fix"
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
   },
+  "devDependencies": {},
   "dependencies": {
-    "next": "^12.2.4",
-    "nextra": "^1.1.0",
-    "nextra-theme-docs": "^1.2.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "vitepress": "^1.0.0-alpha.4",
+    "vue": "^3.2.37"
   },
-  "devDependencies": {
-    "eslint": "8.21.0",
-    "eslint-config-next": "12.2.4"
-  }
+  "author": {
+    "email": "emrreyalcin@gmail.com",
+    "name": "M. Emre Yalcin"
+  },
+  "license": "ISC"
 }

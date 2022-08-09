@@ -1,29 +1,26 @@
 ---
-title: Mavi - Get started
+title: Mavi - Getting started
 ---
 
 # Installation
 
 Here, you will find information on setting and running a Mavi project.
 
-## Setup
-
-### Database
+## Setup Database
 
 To get started you need to have a database. Right now only `PostgreSQL` is supported. There is simple [PostgreSQL configuration guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04) you can refer to.
 
-> After setup your database, you can start using Mavi.
+> You can start using Mavi after setup your database.
 
-### Install the package [mavi](https://www.npmjs.com/package/mavi)
+## Install the package [mavi](https://www.npmjs.com/package/mavi)
 
 `npm install -g mavi`
 
-### Configuration
+## Mavi Configurations
 
 To start mavi server, you must to define your configurations first.
 
 Create a `mavi.config.js` file in your project root like below.
-But the object will be over bloated as your project grows.
 
 <details>
 <summary>
@@ -480,39 +477,43 @@ module.exports = {
 
 </details>
 
-You can choose `directory structure` to create more maintainable configurations as well.
+The object above will be over bloated as your project grows. You can choose [directory structure](#directory-structure) to create more maintainable configurations as well.
 
-You can use `.js` or `.json` files. Each `.js` file should export your configs.
+### Directory structure
 
-**Directories:**
+This format lets you define your api configs in each folder.
 
-1. database
-   1. development.js
-   1. production.js
-1. models
-   1. users.js
-   1. posts.js
-   1. posts.seed.js
-   1. uploads.js
-1. routes
-   1. posts.js
-   1. uploads.js
-1. populate
-   1. user.js
-   1. community.js
-   1. thumbnail.js
-   1. icon.js
-   1. replyTo.js
-   1. responseTo.js
-   1. tags.js
-   1. responseCount.js
-   1. replyCount.js
-   1. bookmark.js
-1. middlewares
-   1. greetings.js
-1. utils
+You can use `.js` or `.json` for config files. If it is a `.js` file, you should export it's content.
 
-### Mavi CLI
+```css
+├─ database
+│ │ development.js
+│ │ production.js
+├─ models
+│ │ users.js
+│ │ posts.js
+│ │ posts.seed.js
+│ └─uploads.js
+├─ routes
+│ │ posts.js
+│ └─uploads.js
+├─ populate
+│ │ user.js
+│ │ community.js
+│ │ thumbnail.js
+│ │ icon.js
+│ │ replyTo.js
+│ │ responseTo.js
+│ │ tags.js
+│ │ responseCount.js
+│ │ replyCount.js
+│ └─bookmark.js
+├─ middlewares
+│ └─greetings.js
+└─ utils
+```
+
+## Mavi CLI
 
 You can start your server by using mavi cli.
 
@@ -521,7 +522,7 @@ You can start your server by using mavi cli.
 `mavi start -b`
 ```
 
-#### Commands
+### Commands
 
 ```sh
 `mavi build` # builds the database from your models and seeds
