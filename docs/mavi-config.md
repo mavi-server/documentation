@@ -1,5 +1,5 @@
 ---
-title: Mavi - Server Settings
+title: Server Settings
 ---
 
 # Server Settings

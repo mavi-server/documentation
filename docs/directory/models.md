@@ -1,5 +1,5 @@
 ---
-title: Mavi - Models
+title: Models
 ---
 
 # Models

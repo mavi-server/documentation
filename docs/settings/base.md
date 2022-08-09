@@ -1,5 +1,5 @@
 ---
-title: Mavi - Base
+title: Base
 ---
 
 ## Base

@@ -1,5 +1,5 @@
 ---
-title: Mavi - Middlewares
+title: Middlewares
 ---
 
 # Middlewares

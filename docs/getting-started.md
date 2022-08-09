@@ -1,5 +1,5 @@
 ---
-title: Mavi - Getting started
+title: Getting started
 ---
 
 # Installation

@@ -1,5 +1,5 @@
 ---
-title: Mavi - Routes
+title: Routes
 ---
 
 # Routes

@@ -1,0 +1,12 @@
+:root {
+  --vp-c-brand: #5198f6;
+  --vp-button-brand-bg: #4685d8;
+  --vp-button-brand-border: #5198f6;
+  --vp-button-brand-hover-bg: #5197f2;
+  --vp-button-brand-hover-border: #3b84e4;
+  --vp-c-brand-dark: #3577ce;
+}
+
+.VPImage.logo {
+  height: 40px;
+}

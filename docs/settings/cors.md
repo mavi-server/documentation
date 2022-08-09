@@ -1,5 +1,5 @@
 ---
-title: Mavi - Cors
+title: Cors
 ---
 
 ## Cors

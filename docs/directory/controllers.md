@@ -1,5 +1,5 @@
 ---
-title: Mavi - Controllers
+title: Controllers
 ---
 
 # Controllers

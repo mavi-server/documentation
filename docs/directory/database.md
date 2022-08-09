@@ -1,5 +1,5 @@
 ---
-title: Mavi - Database
+title: Database
 ---
 
 # Database

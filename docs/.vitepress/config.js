@@ -1,26 +1,41 @@
+var mavi = {}
+// fetch('https://raw.githubusercontent.com/mavi-server/mavi/main/package.json').then(res => {
+//     mavi = res.json()
+// })
+
 export default {
     lang: 'en-US',
     title: 'Mavi',
+    head: [
+        [
+            "link", { href: "/style.css", rel: "stylesheet", type: "text/css" }
+        ]
+    ],
     description: 'Create a server without coding',
     lastUpdated: true,
     themeConfig: {
-        // nav: [
-        //     // { text: 'Guide', link: '/guide/what-is-vitepress', activeMatch: '/guide/' },
-        //     { text: 'Configs', link: '/config/introduction', activeMatch: '/config/' },
-        //     {
-        //         text: version,
-        //         items: [
-        //             {
-        //                 text: 'Changelog',
-        //                 link: 'https://github.com/mavi-server/mavi/releases'
-        //             },
-        //             {
-        //                 text: 'Contributing',
-        //                 link: 'https://github.com/mavi-server/mavi'
-        //             },
-        //         ],
-        //     },
-        // ],
+        logo: '/mavi.svg',
+        siteTitle: false,
+        socialLinks: [
+            { icon: 'github', link: 'https://github.com/mavi-server/mavi' }
+        ],
+        nav: [
+            // { text: 'Guide', link: '/guide/what-is-vitepress', activeMatch: '/guide/' },
+            { text: 'Configs', link: '/config/introduction', activeMatch: '/config/' },
+            {
+                text: mavi.version,
+                items: [
+                    {
+                        text: 'Changelog',
+                        link: 'https://github.com/mavi-server/mavi/releases'
+                    },
+                    {
+                        text: 'Contributing',
+                        link: 'https://github.com/mavi-server/mavi'
+                    },
+                ],
+            },
+        ],
         sidebar: [
             {
                 text: 'Guide',
@@ -45,7 +60,7 @@ export default {
                 ]
             },
             {
-                text: "Queries",
+                text: "Api settings",
                 collapsible: true,
                 items: [
                     {

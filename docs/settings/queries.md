@@ -1,5 +1,5 @@
 ---
-title: Mavi - Queries
+title: Queries
 ---
 
 ## Queries

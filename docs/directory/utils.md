@@ -1,5 +1,5 @@
 ---
-title: Mavi - Utils
+title: Utils
 ---
 
 # Utils

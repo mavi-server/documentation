@@ -1,5 +1,5 @@
 ---
-title: Mavi - Serve
+title: Serve
 ---
 
 ## Serve
