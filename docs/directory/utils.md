@@ -11,9 +11,9 @@ You can manipulate, validate, sanitize the body object with utils.
 An example utility function:
 
 ```js
-// detect content language
-// only supported for "content" column
+// utils/detect-language.js
 
+// detect content language. only supported for "content" column
 const LanguageDetect = require('languagedetect')
 const lngDetector = new LanguageDetect()
 
@@ -33,6 +33,6 @@ module.exports = (data /* req.body */, { schema } /* Route object */) => {
 }
 ```
 
-The first parameter is `req.body` and the second paramter is `Route` object.
+The first parameter is `req.body` and the second paramter is `Route` object and the function has to return a data.
 
 You can refer here to see the [route properties](/directory/routes#route-properties).

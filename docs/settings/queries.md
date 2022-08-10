@@ -4,7 +4,7 @@ title: Queries
 
 ## Queries
 
-You can request to your api with queries. Also you can manage which query should be allowed or what is the default value will be.
+You can request to your mavi api with queries. Also you can manage which query should be allowed or what is the default value will be.
 
 There are five built-in queries and they're available for all defined routes.
 
@@ -20,7 +20,7 @@ Example requests:
 
 ### Start
 
-Starts the results from `n.` index. Default is `0`.
+Start the results from `n.` index. Default is `0`.
 
 Example request:
 
@@ -36,7 +36,7 @@ Example request:
 
 ### Exclude
 
-Excludes specified columns from the result.
+Exclude specified columns from the result.
 
 Example request:
 
@@ -69,7 +69,7 @@ Control and customize query behaviours.
 Let's assume we have a route collection called `customers`. It has following configurations:
 
 ```js
-// customers.js
+// routes/customers.js
 module.exports = [
   {
     path: '/',
@@ -86,7 +86,7 @@ module.exports = [
 To control or customize the queries, we should define a `query` property inside of the route.
 
 ```js
-// customers.js
+// routes/customers.js
 module.exports = [
   {
     path: '/',
@@ -102,10 +102,10 @@ module.exports = [
 
 #### $, lock, locked
 
-This value means incoming queries will not be evaluated
+This value means incoming queries will not be evaluated.
 
 ```js
-// customers.js
+// routes/customers.js
 module.exports = [
   {
     path: '/',
@@ -119,8 +119,10 @@ module.exports = [
 
 #### MaviQuery Object
 
+Control spesific query options.
+
 ```js
-// customers.js
+// routes/customers.js
 module.exports = [
   {
     path: '/',
@@ -141,7 +143,7 @@ module.exports = [
 Another variant:
 
 ```js
-// customers.js
+// routes/customers.js
 module.exports = [
   {
     path: '/',

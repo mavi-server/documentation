@@ -34,7 +34,7 @@ Mavi has two built-in middlewares
 ## Example
 
 ```json
-// posts.json
+// routes/posts.json
 [
   {
     "path": "/",
@@ -54,7 +54,7 @@ The `authorization` middleware is built-in, `published` is a custom middleware.
 You can see this pretty basic middleware below:
 
 ```js
-// published.js
+// middlewares/published.js
 module.exports = (req, res, next) => {
   if (!req.body.published) {
     req.body.published = true
@@ -62,4 +62,29 @@ module.exports = (req, res, next) => {
 
   next()
 }
+```
+
+You could also use this format without creating a middleware config:
+
+```js
+// routes/posts.js
+
+const published = (req, res, next) => {
+  if (!req.body.published) {
+    req.body.published = true
+  }
+
+  next()
+}
+
+module.exports = [
+  {
+    path: '/',
+    method: 'post',
+    controller: 'create',
+    middlewares: ['authorization', published],
+    utils: ['detect-language'],
+    populate: ['bookmark', 'user', 'community', 'thumbnail'],
+  },
+]
 ```

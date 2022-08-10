@@ -119,4 +119,4 @@ module.exports = [
 
 You should run `mavi build` to apply model changes each time.
 
-You can also integrate it with `nodemon` if you wan't instant updates.
+You can also integrate it with `nodemon` if you want instant updates.

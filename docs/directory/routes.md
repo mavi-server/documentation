@@ -78,5 +78,16 @@ The object above will generate following api paths:
 1. **exclude**: It excludes specified columns from the `columns` property.
 1. **populate**: Populates response data with the given columns. Each column should be defined in `populate` folder.
 1. **utils**: Utility functions. Right now mavi doesn't have any built-in utils but you can define your own. Please refer utils page for details.
-1. **serve**: Serves static files. It is used to serve any asset in your server.
-1. **query**: You can control the incoming queries for each path. For instance you can lock the `sort` queries, you even can lock the `where` query's some spesific columns or assign them a default value, etc.
+1. **serve**: Serves static files. It is used to serve any asset in your server. It uses express.static under the hood.
+   Example:
+   ```js
+    serve: {
+      // see more: https://expressjs.com/en/4x/api.html#express.static
+      folder: 'uploads', // Folder path to be served. Path is relative to the project root.
+      dotfiles: 'ignore',
+      etag: false,
+      extensions: ['png', 'jpg', 'jpeg', 'gif', 'ico', 'svg'],
+      maxAge: '1d',
+    }
+   ```
+1. **query**: You can control the incoming queries for each path. For instance you can lock the `sort` queries, you even can lock the `where` query's some spesific columns or assign them a default value, etc. See more about the [queries](/settings/queries).

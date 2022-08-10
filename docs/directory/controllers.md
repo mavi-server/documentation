@@ -6,20 +6,39 @@ title: Controllers
 
 Controllers contain a set of methods that are reached by the client according to the requested route. These methods are specified below.
 
-You can also define your own controllers too! Just create a `controllers` folder then create a `controller_name.js` file. They just have `req` and `res` paramters.
+You can also define your own controllers too! Just create a `controllers` folder then create a `controller_name.js` file. They just have `req` and `res` parameters.
 
 An example:
 
 ```js
-// custom_controller.js
+// controllers/get-latest.js
 module.exports = (req, res) => {
   // this.req.queryBuilder is a knex query builder
   // See more https://knexjs.org/guide/query-builder.html
 
   // This will select all columns of the model and will only bring the first result.
   // The model is automatically extracted by the route you use this controller in.
-  return this.req.queryBuilder.first('*')
+  return this.req.queryBuilder.first('*').orderBy('id', 'desc')
 }
+```
+
+```js
+// routes/customers.js
+module.exports = [
+  {
+    path: '/first-customer',
+    method: 'get',
+    controller: 'get-latest', // controller is used here
+  },
+  {
+    path: '/first-customer',
+    method: 'get',
+    // you could also use the function here
+    controller: (req, res) => {
+      return this.req.queryBuilder.first('*').orderBy('id', 'desc')
+    },
+  },
+]
 ```
 
 ::: tip
@@ -52,12 +71,12 @@ Create one collection. Needs `req.body` object
 
 ## upload
 
-Upload any file to the server. Requires `folder` as a parameter. Also you can easily serve them if you want to!
+Upload any file to the server. Requires `folder` as a parameter. Also you can easily serve uploaded files if you want to.
 
 Example usage;
 
 ```js
-// uploads.js
+// routes/uploads.js
 module.exports = [
   // upload configuration:
   {
@@ -67,7 +86,7 @@ module.exports = [
       'upload',
       {
         accept: 'image', // Accepted mime types. Can a be comma separated string.
-        folders: ['avatars', 'thumbnails'], // Accepted folder names from paramter
+        folders: ['avatars', 'thumbnails'], // Accepted folder names from parameter
         maxFileSize: 5242880, // Max uploadable file size
       },
     ],
@@ -91,12 +110,12 @@ module.exports = [
 
 ## Auth controllers
 
-Auth logic for your application. You can take advantage of `is-owner` and `authorization` middlewares with registered in users.
+Auth logic for your application. You can take advantage of `is-owner` and `authorization` middlewares to use with registered users.
 
 To use these controllers first you need a `users.js` model like below:
 
 ```js
-// users.js
+// models/users.js
 module.exports = {
   id: { type: 'increments', constraints: ['primary'] },
   username: { type: 'string', constraints: ['unique'], maxlength: 18 },
@@ -133,12 +152,12 @@ After this payload, you should set `token` and `refresh` tokens for your request
 
 It would be something like;
 
-```
+```js
 // client side - an HTTP interceptor
 // sets header on each request
-$http.onRequest(req => {
-    req.headers.set('x-access-token', payload.token)
-    req.headers.set('x-refresh-token', payload.refresh)
+$http.onRequest((req) => {
+  req.headers.set('x-access-token', payload.token)
+  req.headers.set('x-refresh-token', payload.refresh)
 })
 ```
 

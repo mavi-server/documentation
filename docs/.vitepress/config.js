@@ -52,9 +52,9 @@ export default {
                 items: [
                     { text: 'Database', link: '/directory/database' },
                     { text: 'Models', link: '/directory/models' },
-                    { text: 'Controllers', link: '/directory/controllers' },
                     { text: 'Routes', link: '/directory/routes' },
                     { text: 'Populate', link: '/directory/populate' },
+                    { text: 'Controllers', link: '/directory/controllers' },
                     { text: 'Middlewares', link: '/directory/middlewares' },
                     { text: 'Utils', link: '/directory/utils' },
                 ]
