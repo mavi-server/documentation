@@ -2,11 +2,11 @@
 layout: home
 
 title: Mavi
-titleTemplate: Create server without coding
+titleTemplate: Create a server without coding
 
 hero:
   name: Mavi
-  text: Create server without coding
+  text: Create a server without coding
   tagline: This module aims to lift repetitive works that you have made every time building a server from scratch.
   actions:
     - theme: brand
